@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+inst/rmarkdown/templates/*/skeleton/_book/*
+inst/rmarkdown/templates/*/skeleton/_bookdown_files/*
