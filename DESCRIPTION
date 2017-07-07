@@ -1,0 +1,26 @@
+Package: jayhawkdown
+Title: A bookdown template for University of Kansas dissertations
+Version: 0.0.0.9000
+Authors@R: c(
+    person("W. Jake", "Thompson", email = "wjakethompson@gmail.com",
+      role = c("aut", "cre")),
+    person("Paul", "Johnson", email = "pauljohn@ku.edu", role = "aut")
+    )
+Description: This package uses the bookdown package and the LaTeX template for
+    the University of Kansas developed by Paul Johnson to format dissertations
+    using the R Markdown language.
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.4.0)
+Imports:
+    bookdown (>= 0.4.1),
+    devtools (>= 1.13.2),
+    dplyr (>= 0.7.1),
+    ggplot2 (>= 2.2.1),
+    knitr (>= 1.16),
+    rmarkdown (>= 1.6.0),
+    yaml (>= 2.1.14)
+RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE)
