@@ -1,0 +1,84 @@
+%%%
+%%% Preamble
+%%%
+\documentclass[12pt,english]{kuthesis}
+\usepackage{mathptmx}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{esint}
+\usepackage[authoryear]{natbib}
+\doublespacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=false,
+ colorlinks=true]
+ {hyperref}
+\hypersetup{pdftitle={University of Kansas Thesis Template},
+ pdfauthor={Anonymous},
+ pdfsubject={A Thesis},
+ urlcolor={black},citecolor={black},allcolors={black}}
+
+\makeatletter
+\usepackage{dcolumn}
+\usepackage{booktabs}
+
+\title{$title$}
+\author{$author$}
+
+\dept{$department$}
+\degreetitle{$degree$}
+\papertype{$papertype$}
+\committee{$member1$}{$member2$}{$member3$}{$member4$}{$member5$}{$member6$}{$member7$}
+\role{$role1$}{$role2$}{$role3$}{$role4$}{$role5$}{$role6$}{$role7$}
+
+$if(datedefended)$
+\@printd@testrue
+\datedefended{$datedefended$}
+\dateapproved{$dateapproved$}
+$endif$
+
+\@ifundefined{showcaptionsetup}{}{%
+  \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\inputencoding{latin9}Listing}
+
+\begin{document}
+\begin{romanpages}
+
+\maketitle
+$if(abstract)$
+  \begin{abstract}
+    $abstract$
+  \end{abstract}
+$endif$
+
+$if(acknowledgements)$
+  \begin{acknowledgementslong}
+    $acknowledgements$
+  \end{acknowledgementslong}
+$endif$
+\tableofcontents{}
+
+\listoffigures
+
+\listoftables
+
+\end{romanpages}
+
+$body$
+
+\end{document}

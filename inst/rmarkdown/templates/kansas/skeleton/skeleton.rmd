@@ -1,0 +1,41 @@
+---
+### Required Information -------------------------------------------------------
+title: "Please Read the Abstract"
+author: "Abstract Writer"
+department: "Educational Psychology"
+degree: "Doctor of Philosophy"
+papertype: "Dissertation"
+member1: "MEMBER 1"
+member2: "MEMBER 2"
+member3: "MEMBER 3"
+member4: "MEMBER 4"
+member5: "MEMBER 5"
+member6: "MEMBER 6"
+member7: "MEMBER 7"
+role1: "Chairperson"
+role2: "Occasional Visitor"
+role3: ""
+role4: "The One Who Never Answers Email"
+role5: "The One with an Extra Long Name"
+role6: "The Fifth Beatle"
+role7: ""
+# If one date is supplied, both must be supplied
+# datedefended: "October 2, 2016"
+# dateapproved: "October 6, 2016"
+### Rendering Options ----------------------------------------------------------
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output:
+  jayhawkdown::thesis_pdf:
+    toc_depth: 2
+bibliography: ["bib/allcites.bib"]
+csl: csl/apa.csl
+link-citations: yes
+lot: true
+lof: true
+### Pretext sections -----------------------------------------------------------
+abstract: >
+  `r if(knitr:::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+acknowledgements: >
+  I would like ot thank all of the little people who made this thesis possible. Sleepy, Dopey, Grumpy, you know who you are.
+---

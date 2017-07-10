@@ -1,0 +1,10 @@
+book_filename: "thesis"
+chapter_name: "Chapter "
+rmd_files: [
+  "index.rmd"
+
+  "90-References.Rmd"
+]
+download: [
+  ["thesis.pdf", "PDF"]
+]

@@ -1,0 +1,5 @@
+Hopefully, you are reading "ku-thesis.pdf". If you are reading a file with some other name, then there's been a goof up. This document is produced by the LaTeX compiler "pdflatex". The file collection needed to reproduce this document is named "KU-thesis-20170413.zip" (the date changes from time to time, of course). The Web home for this project is https://crmda.ku.edu/latex. Previous versions have been offered at http://pj.freefaculty.org/guides/Computing-HOWTO/KU-thesis. That site will always point at the newest edition and there should also be a copy in the Electronic Thesis Webpages pages hosted by the office of the Graduate Dean.
+
+You will love using LaTeX to prepare your thesis. The power to keep content structured, with a systematic framework for cross references among figures, tables, equations, and sections, will significantly improve your quality of life. This will be much better than using an ordinary "text editor."
+
+Well, that's all well and good. But what is this? There are three kinds of files.
