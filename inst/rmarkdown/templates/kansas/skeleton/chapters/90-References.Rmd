@@ -1,6 +1,6 @@
 # References {-}
 
-\setlength{\parindent}{-0.5in}
+\setlength{\parindent}{-15pt}
 \setlength{\leftskip}{15pt}
 \noindent
 
@@ -13,8 +13,5 @@ suppressWarnings(
 
 <div id="refs"></div>
 
-\setlength{\topmargin}{0.0in}
-\setlength{\oddsidemargin}{0.33in}
-\setlength{\evensidemargin}{-0.08in}
-\setlength{\textheight}{9.0in}
-\setlength{\textwidth}{6.0in}
+\setlength{\parindent}{15pt}
+\setlength{\leftskip}{0pt}
