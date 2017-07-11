@@ -1,9 +1,16 @@
 book_filename: "thesis"
 chapter_name: "Chapter "
 rmd_files: [
-  "index.rmd"
+  "skeleton.rmd",
 
-  "90-References.Rmd"
+  "chapters/01-Introduction.Rmd",
+  "chapters/02-Literature-Review.Rmd",
+  "chapters/03-Methods.Rmd",
+  "chapters/04-Results.Rmd",
+  "chapters/05-Discussion.Rmd",
+
+  "chapters/90-References.Rmd",
+  "chapters/91-appendix1.Rmd"
 ]
 download: [
   ["thesis.pdf", "PDF"]

@@ -1,0 +1,20 @@
+# References {-}
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{15pt}
+\noindent
+
+```{r write-packages, include = FALSE}
+suppressWarnings(
+  knitr::write_bib(c("knitr", "rmarkdown", "bookdown", "jayhawkdown"),
+    "bib/packages.bib")
+)
+```
+
+<div id="refs"></div>
+
+\setlength{\topmargin}{0.0in}
+\setlength{\oddsidemargin}{0.33in}
+\setlength{\evensidemargin}{-0.08in}
+\setlength{\textheight}{9.0in}
+\setlength{\textwidth}{6.0in}
