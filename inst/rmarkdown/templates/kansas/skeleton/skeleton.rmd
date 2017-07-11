@@ -28,8 +28,11 @@ site: bookdown::bookdown_site
 output:
   jayhawkdown::thesis_pdf:
     toc_depth: 2
-bibliography: ["bib/allcites.bib"]
+bibliography: ["bib/packages.bib", "bib/allcites.bib"]
+biblio-style: apalike2
 csl: csl/apa.csl
+nocite: |
+  @R-knitr, @R-rmarkdown, @R-bookdown, @R-jayhawkdown, @gelman_bayesian_2003
 link-citations: yes
 lot: true
 lof: true
@@ -39,3 +42,26 @@ abstract: >
 acknowledgements: >
   I would like ot thank all of the little people who made this thesis possible. Sleepy, Dopey, Grumpy, you know who you are.
 ---
+
+```{r setup, include = FALSE}
+needed_packages <- c("knitr", "rmarkdown", "bookdown", "jayhawkdown")
+load_packages <- function(x) {
+  if (!(x %in% rownames(installed.packages()))) {
+    install.packages(x)
+  }
+  suppressPackageStartupMessages(require(x, character.only = TRUE))
+}
+sapply(needed_packages, load_packages)
+
+rm(list = ls()); gc()
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
+  cache = FALSE,
+  fig.path = "figure/"
+)
+```
+
