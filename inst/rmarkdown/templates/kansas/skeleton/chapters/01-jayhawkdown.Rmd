@@ -1,0 +1,23 @@
+# Using jayhawkdown
+
+The **jayhawkdown** package is designed to provide a template for writing theses and dissertations at the University of Kansas using **rmarkdown** [@R-rmarkdown] and **bookdown** [@R-bookdown]. This chapter walks you through how to edit and alter the template to fit your needs.
+
+## Getting started
+
+The structure of your thesis or dissertation is defined the `_bookdown.yml` file. The most important part of this file is the `rmd_files:` listing at the top. This defines which documents to include and the order in which to include them. The first file must be template R Markdown file that was generated in the main directory when the template was opened. For example, if you named the directory "skeleton" when the template was opened, you should see a `skeleton.rmd` document in the main directory. After that file, all documents can be moved and/or deleted to your liking. The exception is the references file. I can be moved into any order you chose (e.g., after the appendix instead of before), but **DO NOT** delete this file. It contains several formatting options and tags to ensure that the references follow APA style and actually appear where you are intending them to.
+
+In the main R Markdown file, you will see some YAML metadata at the top that is needed to create the dissertation. Edit the fields in the `### Required Information` section so that they reflect your document. If fields are not needed (e.g., you have less than 7 people on your committee), simply delete those lines. The next section is `### Rendering Options`. Although these can be edited, this should only be done if you know what you are doing and have a very good reason for doing so. The final section is `### Pretext Sections`. This points to the abstract and acknowledgements files, which are located in the `pre/` folder.
+
+## Adding chapters
+
+To add a new chapter, simply create a new R Markdown document and add it the `chapters/` folder and the `_bookdown.yml` file. It's that easy!
+
+## Creating your documents
+
+To create a PDF version of your thesis or dissertation, press the knit button at the top of the RStudio editor. If you aren't using RStudio, you can use `jayhawkdown::thesis_pdf("skeleton.rmd")`, where `skeleton.rmd` is the name of the R Markdown document that include the YAML metadata. This will create your document at `_book/thesis.pdf`. To change the name of this file, you can edit the `book_filename` in `_bookdown.yml`.
+
+**jayhawkdown** also allows you to create a website version of your document. This can done using syntax similar to what was used for the PDF version. 
+
+## Known limitations
+
+

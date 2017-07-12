@@ -1,13 +1,8 @@
-book_filename: "thesis"
-chapter_name: "Chapter "
 rmd_files: [
-  "skeleton.rmd",
+  "index.rmd",
 
-  "chapters/01-Introduction.Rmd",
-  "chapters/02-Literature-Review.Rmd",
-  "chapters/03-Methods.Rmd",
-  "chapters/04-Results.Rmd",
-  "chapters/05-Discussion.Rmd",
+  "chapters/01-jayhawkdown.Rmd",
+  "chapters/02-markdown-formatting.Rmd",
 
   "chapters/90-References.Rmd",
   "chapters/91-appendix1.Rmd"
@@ -15,3 +10,5 @@ rmd_files: [
 download: [
   ["thesis.pdf", "PDF"]
 ]
+book_filename: "thesis"
+chapter_name: "Chapter "

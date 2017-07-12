@@ -25,9 +25,7 @@ role7: ""
 ### Rendering Options ----------------------------------------------------------
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
-output:
-  jayhawkdown::thesis_pdf:
-    toc_depth: 2
+output: jayhawkdown::thesis_gitbook
 bibliography: ["bib/packages.bib", "bib/allcites.bib"]
 biblio-style: apalike2
 csl: csl/apa.csl
@@ -36,11 +34,11 @@ nocite: |
 link-citations: yes
 lot: true
 lof: true
-### Pretext sections -----------------------------------------------------------
+### Pretext Sections -----------------------------------------------------------
 abstract: >
-  `r if(knitr:::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+  `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
 acknowledgements: >
-  I would like ot thank all of the little people who made this thesis possible. Sleepy, Dopey, Grumpy, you know who you are.
+  `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
 ---
 
 ```{r setup, include = FALSE}
@@ -65,3 +63,12 @@ knitr::opts_chunk$set(
 )
 ```
 
+`r if (knitr:::is_html_output()) '# Front Matter {-}'`
+
+`r if (knitr:::is_html_output()) '## Abstract {-}'`
+
+`r if (knitr:::is_html_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+
+`r if (knitr:::is_html_output()) '## Acknowledgements {-}'`
+
+`r if (knitr:::is_html_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
