@@ -41,13 +41,15 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...){
 #'  output: jayhawkdown::thesis_gitbook
 #' }
 #' @export
-thesis_gitbook <- function(){
-  base <- bookdown::gitbook(split_by = "chapter+number",
-    config = list(toc = list(collapse = "section",
-      before = '<li><a href="./"></a></li>',
-      after = '<li><a href="https://github.com/wjakethompson/jayhawkdown" target="blank">Published with jayhawkdown</a></li>')
-    )
-  )
+thesis_gitbook <- function(...){
+  base <- bookdown::gitbook(list(...))
+
+  # base <- bookdown::gitbook(split_by = "chapter+number",
+  #   config = list(toc = list(collapse = "section",
+  #     before = '<li><a href="./"></a></li>',
+  #     after = '<li><a href="https://github.com/wjakethompson/jayhawkdown" target="blank">Published with jayhawkdown</a></li>')
+  #   )
+  # )
 
   # Mostly copied from knitr::render_sweave
   base$knitr$opts_chunk$comment <- NA
