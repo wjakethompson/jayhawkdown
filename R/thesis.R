@@ -30,36 +30,6 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...){
   base
 }
 
-#' Creates an R Markdown gitbook Thesis Document
-#'
-#' This is a function called in output in the YAML of the driver Rmd file
-#' to specify the creation of a webpage version of the thesis.
-#'
-#' @return A gitbook webpage
-#' @examples
-#' \dontrun{
-#'  output: jayhawkdown::thesis_gitbook
-#' }
-#' @export
-thesis_gitbook <- function(...){
-  base <- bookdown::gitbook(list(...))
-
-  # base <- bookdown::gitbook(split_by = "chapter+number",
-  #   config = list(toc = list(collapse = "section",
-  #     before = '<li><a href="./"></a></li>',
-  #     after = '<li><a href="https://github.com/wjakethompson/jayhawkdown" target="blank">Published with jayhawkdown</a></li>')
-  #   )
-  # )
-
-  # Mostly copied from knitr::render_sweave
-  base$knitr$opts_chunk$comment <- NA
-  base$knitr$opts_chunk$fig.align <- "center"
-  base$knitr$opts_chunk$out.width <- "80%"
-  base$knitr$opts_knit$root.dir <- getwd()
-
-  base
-}
-
 #' Generate a section for the yaml input
 #'
 #' @param input a file containing markdown text
