@@ -14,10 +14,4 @@ To add a new chapter, simply create a new R Markdown document and add it the `ch
 
 ## Creating your documents
 
-To create a PDF version of your thesis or dissertation, press the knit button at the top of the RStudio editor. If you aren't using RStudio, you can use `jayhawkdown::thesis_pdf("skeleton.rmd")`, where `skeleton.rmd` is the name of the R Markdown document that include the YAML metadata. This will create your document at `_book/thesis.pdf`. To change the name of this file, you can edit the `book_filename` in `_bookdown.yml`.
-
-**jayhawkdown** also allows you to create a website version of your document. This can done using syntax similar to what was used for the PDF version. 
-
-## Known limitations
-
-
+To create a PDF version of your thesis or dissertation, press the knit button at the top of the RStudio editor. If you aren't using RStudio, you can use `bookdown::render_book("skeleton.rmd", "jayhawkdown::thesis_pdf")`, where `skeleton.rmd` is the name of the R Markdown document that include the YAML metadata. This will create your document at `_book/thesis.pdf`. To change the name of this file, you can edit the `book_filename` in `_bookdown.yml`.
