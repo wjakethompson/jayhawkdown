@@ -1,8 +1,8 @@
 ---
 ### Required Information -------------------------------------------------------
-title: "Please Read the Abstract"
-author: "Abstract Writer"
-department: "Educational Psychology"
+title: "jayhawkdown: A bookdown template for the University of Kansas"
+author: "W. Jake Thompson"
+department: "Your Department"
 degree: "Doctor of Philosophy"
 papertype: "Dissertation"
 member1: "MEMBER 1"
@@ -25,7 +25,7 @@ role7: ""
 ### Rendering Options ----------------------------------------------------------
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
-output: jayhawkdown::thesis_gitbook
+output: jayhawkdown::thesis_pdf
 bibliography: ["bib/packages.bib", "bib/allcites.bib"]
 biblio-style: apalike2
 csl: csl/apa.csl
@@ -62,13 +62,3 @@ knitr::opts_chunk$set(
   fig.path = "figure/"
 )
 ```
-
-`r if (knitr:::is_html_output()) '# Front Matter {-}'`
-
-`r if (knitr:::is_html_output()) '## Abstract {-}'`
-
-`r if (knitr:::is_html_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
-
-`r if (knitr:::is_html_output()) '## Acknowledgements {-}'`
-
-`r if (knitr:::is_html_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
