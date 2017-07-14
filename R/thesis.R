@@ -22,10 +22,17 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...){
     pandoc_args = "--top-level-division=chapter", ...)
 
   # Mostly copied from knitr::render_sweave
-  base$knitr$opts_chunk$comment <- NA
+  base$knitr$opts_chunk$comment <- "#>"
   base$knitr$opts_chunk$fig.align <- "center"
   base$knitr$opts_chunk$out.width <- "80%"
   base$knitr$opts_knit$root.dir <- getwd()
+  base$knitr$opts_knit$echo <- FALSE
+  base$knitr$opts_knit$warning <- FALSE
+  base$knitr$opts_knit$message <- FALSE
+  base$knitr$opts_knit$error <- FALSE
+  base$knitr$opts_knit$cache <- FALSE
+  base$knitr$opts_knit$fig.ext <- "png"
+  base$knitr$opts_knit$fig.path <- "figure/"
 
   base
 }
