@@ -30,13 +30,14 @@
  urlcolor={black},citecolor={black},allcolors={black}}
 
 %% These additions are made to make the template play nice with pandoc
-\def\tightlist{}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{fancyvrb}
 \let\iint=\relax
 \let\iiint=\relax
 \let\iiiint=\relax
 \usepackage{amsmath}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}\linespread{1}\normalfont\ttfamily}
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
