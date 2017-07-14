@@ -8,7 +8,7 @@ Font can be made **bold** or *italic* by using asterisks or underscores. Make wo
 
 You can create headings by using the # sign. Each # is an additional level.
 
-```
+```markdown
 # Chapter Name
 
 ## Section Name
@@ -18,7 +18,7 @@ You can create headings by using the # sign. Each # is an additional level.
 
 You can also create bulleted or numbered lists. Bulleted lists can be created with `*`, `-`, or `+`. For example,
 
-```
+```markdown
 - item one
 - item two
     - sub item
@@ -34,7 +34,7 @@ Yields the following list:
 
 Similarly, 
 
-```
+```markdown
 1. item one
 2. item two
     1. sub item
@@ -54,7 +54,7 @@ You can also add code text that will be rendered in a typewriter font. This can 
 
 Equations can be added seemlessly by using \LaTeX syntax. For example:
 
-```
+```markdown
 $$
 P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
 $$
@@ -101,7 +101,7 @@ mtcars %>%
 
 The third type of cross referencing is for equations. This requires a little bit more work. Recall that to create an equation above we used the following syntax:
 
-```
+```markdown
 $$
 P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
 $$
@@ -109,7 +109,7 @@ $$
 
 In order to create a cross reference, we have to define the \LaTeX equation and then add the reference:
 
-```
+```markdown
 \begin{equation}
   P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
   (\#eq:irt-model)
@@ -125,14 +125,14 @@ That code will render the equation and give it a number, which can then be refer
 
 The final type of cross referencing that I'll discuss here is referencing sections of the paper. This is done by using the section headings (i.e., we talked about \LaTeX equations in section \@ref(latex-equations)). By default, references for section headings are defined by the section name. For example to reference the section on equations using \LaTeX, I use `\@ref(latex-equations)`, because the name of the section is "Latex Equations". However, you can also define your own labels by add `{#label}` after the section heading. For example, the section heading for section \@ref(format) looks like this:
 
-```
+```markdown
 ## Formatting text {#format}
 ```
 
 So to create a reference for this section I can use `\@ref(format)`. You can also create links. For example, the following code will create a link where the word "instructions" links to the "Getting started" section in Chapter \@ref(using-jayhawkdown):
 
-```
-[instructions][Getting started].
+```markdown
+[instructions][Getting started]
 ```
 
 This template comes with [instructions][Getting started]. However, it is probably more useful to reference the specific section number using the `\@ref(getting-started)` syntax.
