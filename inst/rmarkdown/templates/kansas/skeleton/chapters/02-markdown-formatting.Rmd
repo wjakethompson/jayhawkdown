@@ -52,7 +52,7 @@ You can also add code text that will be rendered in a typewriter font. This can 
 
 ## Latex Equations
 
-Equations can be added seemlessly by using \LaTeX syntax. For example:
+Equations can be added seemlessly by using \LaTeX\ syntax. For example:
 
 ```markdown
 $$
@@ -107,7 +107,7 @@ P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
 $$
 ```
 
-In order to create a cross reference, we have to define the \LaTeX equation and then add the reference:
+In order to create a cross reference, we have to define the \LaTeX\ equation and then add the reference:
 
 ```markdown
 \begin{equation}
@@ -123,7 +123,7 @@ In order to create a cross reference, we have to define the \LaTeX equation and 
 
 That code will render the equation and give it a number, which can then be referenced using the label provided (i.e., `\@ref(eq:irt-model)` will create the reference for equation \@ref(eq:irt-model)).
 
-The final type of cross referencing that I'll discuss here is referencing sections of the paper. This is done by using the section headings (i.e., we talked about \LaTeX equations in section \@ref(latex-equations)). By default, references for section headings are defined by the section name. For example to reference the section on equations using \LaTeX, I use `\@ref(latex-equations)`, because the name of the section is "Latex Equations". However, you can also define your own labels by add `{#label}` after the section heading. For example, the section heading for section \@ref(format) looks like this:
+The final type of cross referencing that I'll discuss here is referencing sections of the paper. This is done by using the section headings (i.e., we talked about \LaTeX\ equations in section \@ref(latex-equations)). By default, references for section headings are defined by the section name. For example to reference the section on equations using \LaTeX, I use `\@ref(latex-equations)`, because the name of the section is "Latex Equations". However, you can also define your own labels by add `{#label}` after the section heading. For example, the section heading for section \@ref(format) looks like this:
 
 ```markdown
 ## Formatting text {#format}
@@ -136,3 +136,16 @@ So to create a reference for this section I can use `\@ref(format)`. You can als
 ```
 
 This template comes with [instructions][Getting started]. However, it is probably more useful to reference the specific section number using the `\@ref(getting-started)` syntax.
+
+## Citations
+
+Citations are also straightforward to add in the markdown language. All that is required is a BibTeX file to be placed in the `bib/` directory. You can add as many BibTeX files as you would like, as long as you list them in the `bibliography:` options under the YAML metadata in the main R Markdown document. To reference a citation in the text use `[@reference-key]` or `@reference-key`, where `reference-key` is the name given to the reference in the BibTeX file. Putting the key inside of brackets will make the entire citation appear within parentheses, whereas no brackets will put only the year in parentheses.
+
+* `[@bookdown]` renders as [@bookdown]
+* `@bookdown` renders as @bookdown
+
+You can include multiple citations within a single set of brackets by separating them with a semicolon. Finally, you can suppress the author's name by using a `-` sign before the key (i.e., `[-@bookdown]`).
+
+By default, references for all R packages that are loaded with your session are will be written to `bib/packages.bib`. They key for packages will be "R-packagename". For example, I used **ggplot** to generate Figure \@ref(fig:plot), so I could cite the package by using `[@R-ggplot2]` [@R-ggplot2].
+
+All citations in the body of your document will automatically be included in the references chapter. If you would like to include additional references without citing them in your text, add the keys to the `nocite:` field of the YAML metadata.

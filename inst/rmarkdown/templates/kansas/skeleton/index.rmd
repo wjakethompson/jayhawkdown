@@ -31,7 +31,7 @@ bibliography: ["bib/packages.bib", "bib/references.bib"]
 biblio-style: apalike2
 csl: csl/apa.csl
 nocite: |
-  @R-knitr, @R-rmarkdown, @R-bookdown, @R-jayhawkdown, @gelman_bayesian_2003
+  @R-knitr, @R-rmarkdown, @R-bookdown, @R-jayhawkdown
 link-citations: yes
 lot: true
 lof: true
