@@ -25,5 +25,7 @@ Imports:
     rockchalk (>= 1.8.101),
     texreg (>= 1.36.23),
     yaml (>= 2.1.14)
+Remotes:
+    rstudio/bookdown
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
