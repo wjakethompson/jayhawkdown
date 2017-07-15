@@ -14,4 +14,4 @@ repos:
   KRAN: http://rweb.crmda.ku.edu/kran/
 
 install:
-- travis_wait R -e 'devtools::install_deps(dependencies = TRUE)'
+- travis_wait R -e 'devtools::install_deps(dependencies=TRUE)'
