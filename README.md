@@ -35,16 +35,16 @@ The recommended way to use this template is with RStudio; however, it is possibl
 1.  Open a new RStudio window.
 2.  Open a new R Markdown document.
 
-    <img src="README/rmarkdown.png" width="80%" style="display: block; margin: auto;" />
+    <img src="README/rmarkdown.png" width="50%" style="display: block; margin: auto;" />
 
 3.  Select from templates, the University of Kansas Thesis template from the **jayhawkdown** package.
 
-    <img src="README/select-template.png" width="80%" style="display: block; margin: auto;" />
+    <img src="README/select-template.png" width="50%" style="display: block; margin: auto;" />
 
 4.  Because there are multiple files for this template, you must create a directory to house them, and choose a location for the directory. I suggest calling this directory `index` (you can change this later, but this will make your main R Markdown document be called `index.rmd`).
 5.  Select "OK", and the template should open automatically. Press the "Knit" button at the top of the editor to render the template, and read the document for instructions on how to edit the template for your specific paper.
 
-    <img src="README/knit.png" width="80%" style="display: block; margin: auto;" />
+    <img src="README/knit.png" width="50%" style="display: block; margin: auto;" />
 
 6.  If the PDF does not open automatically, you will be able to find it in the newly created `_book/` directory.
 
