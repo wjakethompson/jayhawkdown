@@ -4,14 +4,14 @@ sudo: false
 cache: packages
 latex: false
 
-include:
-- r: release
-- r: oldrel
-- r: devel
+r:
+  - oldrel
+  - release
+  - devel
 
 repos:
   CRAN: https://cran.rstudio.com/
   KRAN: http://rweb.crmda.ku.edu/kran/
 
 install:
-- travis_wait R -e 'devtools::install_deps(dep = T)'
+- travis_wait R -e 'devtools::install_deps(dependencies = TRUE)'
