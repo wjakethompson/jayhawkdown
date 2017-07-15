@@ -22,8 +22,6 @@ Imports:
     knitr (>= 1.16),
     magrittr,
     rmarkdown (>= 1.6.0),
-    rockchalk (>= 1.8.101),
-    texreg (>= 1.36.23),
     yaml (>= 2.1.14)
 Remotes:
     rstudio/bookdown

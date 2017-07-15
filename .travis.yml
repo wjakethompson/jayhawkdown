@@ -12,7 +12,3 @@ r:
 repos:
   CRAN: https://cran.rstudio.com/
   KRAN: http://rweb.crmda.ku.edu/kran/
-
-install:
-- Rscript -e "install.packages('devtools')"
-- travis_wait Rscript -e 'devtools::install_deps(dependencies=TRUE)'

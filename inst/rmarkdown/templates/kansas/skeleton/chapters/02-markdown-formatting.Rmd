@@ -83,11 +83,6 @@ This will automatically number the figure and add the caption. Figure \@ref(fig:
 
 You can similarly add references to tables. Table \@ref(tab:tab-summary) is created using `knitr::kable()`, which allows a caption to be specified. This will number the table, which then can be referenced using similar syntax (i.e., `\@ref(tab:tab-summary))`. There are many different packages that will create tables for you, each with their own strengths and weaknesses. For example the **rockchalk** [@R-rockchalk] and **texreg** [@R-texreg] packages will both create APA style regression tables, which can be modified to include cross references.
 
-```{r}
-library(rockchalk)
-library(texreg)
-```
-
 ```{r tab-summary, echo = TRUE}
 library(dplyr)
 
