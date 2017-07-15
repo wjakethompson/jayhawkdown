@@ -3,7 +3,7 @@
 jayhawkdown
 ===========
 
-[![Travis-CI Build Status](https://travis-ci.org/wjakethompson/jayhawkdown.svg?branch=master)](https://travis-ci.org/wjakethompson/jayhawkdown) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wjakethompson/jayhawkdown?branch=master&svg=true)](https://ci.appveyor.com/project/wjakethompson/jayhawkdown) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/jayhawkdown)](http://cran.r-project.org/package=jayhawkdown)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/wjakethompson/jayhawkdown.svg?branch=master)](https://travis-ci.org/wjakethompson/jayhawkdown) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wjakethompson/jayhawkdown?branch=master&svg=true)](https://ci.appveyor.com/project/wjakethompson/jayhawkdown) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/jayhawkdown)](http://cran.r-project.org/package=jayhawkdown)
 
 This package provides a template for writing theses and dissertations at the University of Kansas using **rmarkdown** and **bookdown**. Much of this was inspired by the [**thesisdown**](https://github.com/ismayc/thesisdown) package by Chester Ismay.
 
