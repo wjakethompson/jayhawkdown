@@ -7,7 +7,7 @@ jayhawkdown
 
 This package provides a template for writing theses and dissertations at the University of Kansas using **rmarkdown** and **bookdown**. Much of this was inspired by the [**thesisdown**](https://github.com/ismayc/thesisdown) package by Chester Ismay.
 
-The original Latex template and class document were written by Paul Johnson, and adpated for use with pandoc and R markdown.
+The original Latex template and class document were written by Paul Johnson, and modified for use with pandoc and R markdown.
 
 Installation
 ------------
