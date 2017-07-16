@@ -1,5 +1,5 @@
 Package: jayhawkdown
-Title: A Bookdown Template for University of Kansas dissertations
+Title: A Bookdown Template for University of Kansas Dissertations
 Version: 1.0.0
 Authors@R: c(
     person("W. Jake", "Thompson", email = "wjakethompson@gmail.com",
