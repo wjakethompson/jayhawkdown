@@ -18,14 +18,13 @@ Depends:
     R (>= 3.4.0)
 Imports:
     bookdown (>= 0.4.0),
-    devtools (>= 1.13.2),
-    dplyr (>= 0.7.1),
-    ggplot2 (>= 2.2.1),
     knitr (>= 1.16),
     magrittr,
     rmarkdown (>= 1.6.0),
     yaml (>= 2.1.14)
 Suggests:
+    dplyr (>= 0.7.1),
+    ggplot2 (>= 2.2.1),
     lintr (>= 1.0.0),
     testthat
 RoxygenNote: 6.0.1
