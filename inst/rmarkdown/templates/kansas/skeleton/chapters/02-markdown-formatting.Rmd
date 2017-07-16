@@ -73,7 +73,7 @@ One of the extensions provided by the **bookdown** package is easy cross referen
 
 ```{r plot, echo = TRUE, fig.cap = "Here is a figure caption to describe this graph"}
 library(ggplot2)
-data(mtcars)
+mtcars <- read.csv("data/mtcars.csv", stringsAsFactors = FALSE)
 
 ggplot(mtcars, aes(disp, mpg, colour = factor(cyl))) + 
   geom_point()
