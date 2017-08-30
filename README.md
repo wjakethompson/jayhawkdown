@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-jayhawkdown
-===========
+jayhawkdown <img src="hex_logo/jayhawkdown.png" align="right" />
+================================================================
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/wjakethompson/jayhawkdown.svg?branch=master)](https://travis-ci.org/wjakethompson/jayhawkdown) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wjakethompson/jayhawkdown?branch=master&svg=true)](https://ci.appveyor.com/project/wjakethompson/jayhawkdown) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/jayhawkdown)](https://cran.r-project.org/package=jayhawkdown)
 
