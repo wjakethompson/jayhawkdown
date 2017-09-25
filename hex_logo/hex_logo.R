@@ -28,6 +28,6 @@ g <- ggplot() +
   scale_y_continuous(expand = c(0.04, 0)) +
   theme_hex
 
-png("hex_logo/jayhawkdown.png", width = 181, height = 209, bg = "transparent")
+png("hex_logo/jayhawkdown.png", width = 181, height = 210, bg = "transparent")
 print(g)
 dev.off()
