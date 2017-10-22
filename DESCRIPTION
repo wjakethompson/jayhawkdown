@@ -4,7 +4,7 @@ Version: 1.0.0
 Authors@R: c(
     person("W. Jake", "Thompson", email = "wjakethompson@gmail.com",
       role = c("aut", "cre")),
-    person("Paul", "Johnson", email = "pauljohn@ku.edu", role = "aut")
+    person("Paul E.", "Johnson", email = "pauljohn@ku.edu", role = "aut")
     )
 Description: A bookdown template for writing theses and dissertations at the
     University of Kansas. This package makes use of the LaTeX template developed
