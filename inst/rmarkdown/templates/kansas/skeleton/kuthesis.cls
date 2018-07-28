@@ -299,7 +299,7 @@
   \setcounter{page}{2}
   \begin{center}
     The {\@papertype} Committee for {\@author} certifies \par
-    that this is the approved version of the following \MakeLowercase{\@papertype} : \par
+    that this is the approved version of the following \MakeLowercase{\@papertype}: \par
     \vfill
     {\@title} \par
     \vfill
