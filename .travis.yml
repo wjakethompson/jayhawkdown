@@ -1,13 +1,16 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-language: r
+
+language: R
 sudo: false
+dist: trusty
 cache: packages
 latex: false
 
-r:
-  - release
-  - devel
-
-repos:
-  CRAN: https://cran.rstudio.com/
-  KRAN: http://rweb.crmda.ku.edu/kran/
+jobs:
+  include:
+  - r: 3.1
+  - r: 3.2
+  - r: 3.3
+  - r: 3.4
+  - r: release
+  - r: devel
