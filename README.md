@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# jayhawkdown <img src="hex_logo/jayhawkdown.png" align="right" />
+# jayhawkdown <img src="man/figures/jayhawkdown.png" align="right" />
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
