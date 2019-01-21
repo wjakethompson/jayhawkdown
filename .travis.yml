@@ -11,7 +11,11 @@ before_script:
   - Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
   - cd ../..
 
-after_success:
-  - cd inst/examples
-  - chmod +x ./_deploy.sh
-  - ./_deploy.sh
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_PAT
+  keep-history: true
+  on:
+    branch: master
+  local-dir: inst/examples/_book/
