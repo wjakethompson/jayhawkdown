@@ -1,16 +1,29 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
-language: R
+language: r
+pandoc_version: 2.2
 sudo: false
 dist: trusty
-cache: packages
-latex: false
+cache:
+  packages: yes
+  directories:
+    - $HOME/bin
+    - $TRAVIS_BUILD_DIR/inst/examples/_bookdown_files
 
-jobs:
-  include:
-  - r: 3.1
-  - r: 3.2
-  - r: 3.3
-  - r: 3.4
-  - r: release
-  - r: devel
+env:
+  global:
+    - R_PKG="$(basename $TRAVIS_REPO_SLUG)" R_KNITR_OPTIONS="knitr.chunk.tidy=TRUE" PATH=$HOME/bin:$PATH
+
+before_install:
+  - Rscript -e "update.packages(.libPaths()[1], ask = FALSE)"
+
+before_script:
+ - "[ -x \"$HOME/bin/phantomjs\" ] || Rscript -e \"webshot::install_phantomjs()\""
+  - R CMD INSTALL .
+  - cd inst/examples
+  - Rscript -e "bookdown::render_book('index.Rmd', 'jayhawkdown::thesis_pdf')"
+  - Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+  - cd ../..
+
+after_success:
+  - cd inst/examples
+  - chmod +x ./_deploy.sh
+  - ./_deploy.sh
