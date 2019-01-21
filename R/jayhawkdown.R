@@ -8,4 +8,5 @@
 #' Creates an R Markdown thesis template as a PDF
 #' @docType package
 #' @name jayhawkdown
+#' @importFrom xfun read_utf8 write_utf8
 NULL
