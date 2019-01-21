@@ -3,7 +3,7 @@ jayhawkdown_skeleton <- function(path) {
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
   # copy 'resources' folder to path
-  resources = jayhawkdown_file("rstudio", "templates", "project", "resources")
+  resources <- jayhawkdown_file("rstudio", "templates", "project", "resources")
 
   files <- list.files(resources, recursive = TRUE, include.dirs = FALSE)
 

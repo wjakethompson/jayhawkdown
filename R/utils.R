@@ -27,5 +27,5 @@ find_resource <- function(template, file) {
 }
 
 jayhawkdown_file <- function(...) {
-  system.file(..., package = 'jayhawkdown', mustWork = TRUE)
+  system.file(..., package = "jayhawkdown", mustWork = TRUE)
 }
