@@ -1,0 +1,86 @@
+---
+### Required Information -------------------------------------------------------
+title: "Thesis Title"
+author: "Your Name"
+department: "Your Department"
+degree: "Your Degree"
+papertype: "Dissertation or Thesis"
+# Committe:
+member1: "Committee Member #1"
+role1: "Chairperson"
+member2: "Committee Member #2"
+role2: ""
+member3: "Committee Member #3"
+role3: ""
+member4: "Committee Member #4"
+role4: ""
+member5: "Committee Member #5"
+role5: "Outside member"
+# If one date is supplied, both must be supplied
+# datedefended: "March 28, 2018"
+# dateapproved: "March 28, 2018"
+### Rendering Options ----------------------------------------------------------
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: jayhawkdown::thesis_pdf
+bibliography: ["bib/references.bib", "bib/packages.bib"]
+biblio-style: apalike2
+csl: csl/apa.csl
+nocite: |
+  @R-knitr, @R-rmarkdown, @R-bookdown, @R-jayhawkdown
+link-citations: yes
+lot: true
+lof: true
+### Pretext Sections -----------------------------------------------------------
+abstract: >
+  `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+acknowledgements: >
+  `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+---
+
+```{r instructions, include = FALSE}
+# Welcome to the jayhawkdown thesis and dissertation template! To ensure you
+# have all of the necessary software installed, please check the README here:
+# https://github.com/wjakethompson/jayhawkdown
+# Once your system has been set up correctly, you should be able to knit the
+# example file by pressing the 'Knit' button in RStudio, or using:
+# bookdown::render_book("index.Rmd", "jayhawkdown::thesis_pdf")
+```
+
+```{r setup, include = FALSE}
+needed_packages <- c("dplyr", "forcats", "ggplot2", "purrr", "readr", "stringr",
+  "tibble", "tidyr")
+load_packages <- function(x) {
+  if (!(x %in% rownames(installed.packages()))) {
+    install.packages(x)
+  }
+  suppressPackageStartupMessages(require(x, character.only = TRUE))
+}
+sapply(needed_packages, load_packages)
+
+rm(list = ls()); gc()
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
+  cache = FALSE,
+  fig.ext = "png",
+  fig.path = "figure/",
+  fig.align = "center",
+  out.width = "80%",
+  dpi = 2000,
+  dev = "cairo_pdf"
+)
+
+options(knitr.kable.NA = '')
+```
+
+`r if (knitr::is_html_output()) "# Abstract {-}"`
+
+`r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+
+`r if (knitr::is_html_output()) "# Acknowledgements {-}"`
+
+`r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`

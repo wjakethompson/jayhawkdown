@@ -1,0 +1,12 @@
+book_filename: jayhawkdown
+repo: https://github.com/wjakethompson/jayhawkdown/
+output_dir: _book
+delete_merged_file: true
+language:
+  ui:
+    edit: "Edit"
+    chapter_name: "Chapter "
+
+download: [
+  ["jayhawkdown.pdf", "PDF"]
+]

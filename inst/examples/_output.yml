@@ -1,0 +1,10 @@
+jayhawkdown::thesis_pdf: default
+
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><strong><a href="./">jayhawkdown</a></strong></li>
+      sharing: no
+    css: css/style.css

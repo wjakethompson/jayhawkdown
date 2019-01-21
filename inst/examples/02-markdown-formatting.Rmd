@@ -1,0 +1,146 @@
+# Writing in R Markdown
+
+R Markdown documents use the markdown language to format plain text in the final document. The **bookdown** package [@R-bookdown] extends the R Markdown language to include additional features. For a full description of all the features available to you, see the [Components](https://bookdown.org/yihui/bookdown/components.html) chapter of the **bookdown** book [@bookdown]. In this chapter I'll highlight some of the key features that are most likely to be used.
+
+## Formatting text {#format}
+
+Font can be made **bold** or *italic* by using asterisks or underscores. Make words bold by using two (i.e., `**bold**` or `__bold__`) and italic using one (i.e., `*italic*` or `_italic_`).
+
+You can create headings by using the # sign. Each # is an additional level.
+
+```markdown
+# Chapter Name
+
+## Section Name
+
+### Subsection
+```
+
+You can also create bulleted or numbered lists. Bulleted lists can be created with `*`, `-`, or `+`. For example,
+
+```markdown
+- item one
+- item two
+    - sub item
+- item three
+```
+
+Yields the following list:
+
+- item one
+- item two
+    - sub item
+- item three
+
+Similarly, 
+
+```markdown
+1. item one
+2. item two
+    1. sub item
+3. item three
+```
+
+Yields a numbered list:
+
+1. item one
+2. item two
+    1. sub item
+3. item three
+
+You can also add code text that will be rendered in a typewriter font. This can be done inline by using single back ticks. You can also put an entire block of text in code by use three back ticks before and after the block begins and ends.
+
+## Latex Equations
+
+Equations can be added seemlessly by using \LaTeX\ syntax. For example:
+
+```markdown
+$$
+P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
+$$
+```
+
+Yields the following equaiton:
+$$
+P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
+$$
+
+Double dollar signs will center the equation on its own line. A single dollar sign before and after will include the equation inline (i.e., $A = \pi r^2$).
+
+## Cross References
+
+One of the extensions provided by the **bookdown** package is easy cross references. To reference a figure, simply add the `fig.cap` arugment as a chunk option with a relevant caption. 
+
+```{r plot, echo = TRUE, fig.cap = "Here is a figure caption to describe this graph"}
+library(ggplot2)
+mtcars <- read.csv("data/mtcars.csv", stringsAsFactors = FALSE, row.names = 1)
+
+ggplot(mtcars, aes(disp, mpg, colour = factor(cyl))) + 
+  geom_point()
+```
+
+This will automatically number the figure and add the caption. Figure \@ref(fig:plot) can then be referenced using `\@ref(fig:plot)`, where `plot` is the name of the code chunk. All figures that are generated in R will be saved to the `figure` directory. Alternatively, you can add your own images to `figure/` and add them using `knitr::include_graphics()`.
+
+You can similarly add references to tables. Table \@ref(tab:tab-summary) is created using `knitr::kable()`, which allows a caption to be specified. This will number the table, which then can be referenced using similar syntax (i.e., `\@ref(tab:tab-summary))`. There are many different packages that will create tables for you, each with their own strengths and weaknesses. For example the **rockchalk** [@R-rockchalk] and **texreg** [@R-texreg] packages will both create APA style regression tables, which can be modified to include cross references.
+
+```{r tab-summary, echo = TRUE}
+library(dplyr)
+
+mtcars %>%
+  group_by(cyl) %>%
+  select(cyl:hp) %>%
+  summarize_all(mean) %>%
+  knitr::kable(caption = "Here's a table of summary statistics",
+    booktabs = TRUE)
+```
+
+The third type of cross referencing is for equations. This requires a little bit more work. Recall that to create an equation above we used the following syntax:
+
+```markdown
+$$
+P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
+$$
+```
+
+In order to create a cross reference, we have to define the \LaTeX\ equation and then add the reference:
+
+```markdown
+\begin{equation}
+  P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
+  (\#eq:irt-model)
+\end{equation}
+```
+
+\begin{equation}
+  P(X_{ij} = 1|\theta) = \frac{1}{1-e^{(-a_j (\theta_i-b_j))}}
+  (\#eq:irt-model)
+\end{equation}
+
+That code will render the equation and give it a number, which can then be referenced using the label provided (i.e., `\@ref(eq:irt-model)` will create the reference for equation \@ref(eq:irt-model)).
+
+The final type of cross referencing that I'll discuss here is referencing sections of the paper. This is done by using the section headings (i.e., we talked about \LaTeX\ equations in section \@ref(latex-equations)). By default, references for section headings are defined by the section name. For example to reference the section on equations using \LaTeX, I use `\@ref(latex-equations)`, because the name of the section is "Latex Equations". However, you can also define your own labels by add `{#label}` after the section heading. For example, the section heading for section \@ref(format) looks like this:
+
+```markdown
+## Formatting text {#format}
+```
+
+So to create a reference for this section I can use `\@ref(format)`. You can also create links. For example, the following code will create a link where the word "instructions" links to the "Getting started" section in Chapter \@ref(using-jayhawkdown):
+
+```markdown
+[instructions][Getting started]
+```
+
+This template comes with [instructions][Getting started]. However, it is probably more useful to reference the specific section number using the `\@ref(getting-started)` syntax.
+
+## Citations
+
+Citations are also straightforward to add in the markdown language. All that is required is a BibTeX file to be placed in the `bib/` directory. You can add as many BibTeX files as you would like, as long as you list them in the `bibliography:` options under the YAML metadata in the main R Markdown document. To reference a citation in the text use `[@reference-key]` or `@reference-key`, where `reference-key` is the name given to the reference in the BibTeX file. Putting the key inside of brackets will make the entire citation appear within parentheses, whereas no brackets will put only the year in parentheses.
+
+* `[@bookdown]` renders as [@bookdown]
+* `@bookdown` renders as @bookdown
+
+You can include multiple citations within a single set of brackets by separating them with a semicolon. Finally, you can suppress the author's name by using a `-` sign before the key (i.e., `[-@bookdown]`).
+
+By default, references for all R packages that are loaded with your session are will be written to `bib/packages.bib`. They key for packages will be "R-packagename". For example, I used **ggplot** to generate Figure \@ref(fig:plot), so I could cite the package by using `[@R-ggplot2]` [@R-ggplot2].
+
+All citations in the body of your document will automatically be included in the references chapter. If you would like to include additional references without citing them in your text, add the keys to the `nocite:` field of the YAML metadata.

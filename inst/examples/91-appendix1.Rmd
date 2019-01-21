@@ -1,0 +1,13 @@
+# (APPENDIX) Appendix {-}
+
+# Something important
+
+You can put an appendix (or multiple appendices) here. Each appendix can be added as a separate R Markdown document, just like a chapter, and placed in the desired order in the `_bookdown.yml` file. The only constraint is that the first appendix must begin with a special tag.
+
+```markdown
+# (APPENDIX) Appendix {-}
+
+# Name of Appendix A
+```
+
+The first line sets a flag to indicate that the appendices are starting. This will make the following chapters be labeled Appendix A, Appendix B, etc., rather than continuing the chapter numbering from the main body of the thesis.

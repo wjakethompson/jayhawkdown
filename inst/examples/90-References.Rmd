@@ -1,0 +1,17 @@
+# References {-}
+
+\setlength{\parindent}{-15pt}
+\setlength{\leftskip}{15pt}
+\noindent
+
+```{r write-packages, include = FALSE}
+suppressWarnings(
+  knitr::write_bib(c(.packages(), "knitr", "rmarkdown", "bookdown",
+    "jayhawkdown"), "bib/packages.bib")
+)
+```
+
+<div id="refs"></div>
+
+\setlength{\parindent}{15pt}
+\setlength{\leftskip}{0pt}
