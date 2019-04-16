@@ -1,0 +1,3 @@
+# Literature Review {#lit-review}
+
+Here is where you describe the past research on your topic in excruciating detail. How have your variables been defined in the past? What has been done? What are the limitations of past work? What still needs to be explored?

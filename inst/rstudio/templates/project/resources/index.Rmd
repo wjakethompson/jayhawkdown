@@ -1,0 +1,84 @@
+---
+### Required Information -------------------------------------------------------
+title: "A Very Important Study"
+author: "Your Name"
+department: "Department of Coffee Houses"
+degree: "Doctor of Philosophy"
+papertype: "Your Paper"
+# Committee (up to 7 members):
+member1: "Your Advisor"
+role1: "Chairperson"
+member2: "The one who actually read the paper"
+role2: ""
+member3: "The one who is always late"
+role3: ""
+member4: "The one who doesn't respond to email"
+role4: ""
+member5: "The one who shows up for the food"
+role5: "Outside member"
+# If one date is suppled, both must be supplied
+datedefended: "September 4, 2016"
+dateapproved: "October 8, 2016"
+### Other options --------------------------------------------------------------
+bibliography: ["bib/packages.bib", "bib/references.bib"]
+nocite: |
+  @R-bookdown, @R-jayhawkdown, @R-knitr, @R-rmarkdown
+link-citations: yes
+### Rendering Options (probably don't edit) ------------------------------------
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+output: jayhawkdown::thesis_pdf
+biblio-style: apalike2
+csl: csl/apa.csl
+lot: true
+lof: true
+### Pretext Sections -----------------------------------------------------------
+abstract: >
+  `r if (knitr::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+acknowledgements: >
+  `r if (knitr::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+---
+
+```{r setup, include = FALSE}
+# Define which packages you will need ------------------------------------------
+needed_packages <- c("glue")
+
+# Load required packages
+load_packages <- function(x) {
+  if (!x %in% installed.packages()) {
+    install.packages(x, repos = "https://cran.rstudio.com/")
+  }
+  suppressPackageStartupMessages(require(x, character.only = TRUE))
+}
+vapply(needed_packages, load_packages, logical(1))
+
+# Set some knitr options -------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
+  cache = FALSE,
+  fig.ext = "png",
+  fig.path = "figure/",
+  fig.align = "center",
+  out.width = "80%",
+  fig.retina = 3,
+  dpi = 200,
+  dev = "cairo_pdf"
+)
+
+options(knitr.kable.NA = "")
+```
+
+`r if (knitr::is_latex_output()) '<!--'`
+
+# Abstract {-}
+
+`r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+
+# Acknowledgements {-}
+
+`r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+
+`r if (knitr::is_latex_output()) '-->'`
