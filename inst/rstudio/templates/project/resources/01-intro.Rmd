@@ -1,0 +1,22 @@
+# Introduction {#intro}
+
+This chapter is used to provide and overview and some context to your project. What is the high level overview of the question you are trying to answer, and why is it important? How are you answering the question? What are the implications of your findings (e.g., who benefits and who is impacted)?
+
+## Study constraints
+
+This may also be a good place to discuss any constraints of your study. This would have a more in depth description in the [Discussion chapter](#discussion). However, this is a good way to prime your reader for what to expect, and what not to expect (e.g., "I'm focused on this particular aspect of the problem," or "I've limited the scope of the question to these specific areas").
+
+## Colophon
+
+This chapter is also a convenient place to make sure you cite the software used to run your analyses and generate the final document. For you convenience, here is some code that will cite all of the package you have loaded, as well as the packages needed to render the document.
+
+```{r}
+render_pkgs <- c("bookdown", "jayhawkdown", "knitr", "rmarkdown")
+loaded_pkgs <- sort(setdiff(.packages(), c("stats", "graphics", "grDevices",
+  "utils", "datasets", "methods", "base")))
+
+render_cite <- glue("**{render_pkgs}** [@R-{render_pkgs}]")
+loaded_cite <- glue("**{loaded_pkgs}** [@R-{loaded_pkgs}]")
+```
+
+This document was rendered using `r knitr::combine_words(render_cite)`. The following *R* packages were used to run analyses, generate figures, and create tables: `r knitr::combine_words(loaded_cite)`.
