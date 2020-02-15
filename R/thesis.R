@@ -4,9 +4,10 @@
 #' to specify using the University of Kansas LaTeX template and cls files.
 #'
 #'
-#' @param toc A Boolean (TRUE or FALSE) specifying where table of contents should be created
+#' @param toc A Boolean (TRUE or FALSE) specifying where table of contents
+#'   should be created
 #' @param toc_depth A positive integer
-#' @param ... arguments to be passed to \code{rmarkdown::\link[rmarkdown]{pdf_document}}
+#' @param ... arguments to be passed to [bookdown::pdf_book()]
 #'
 #' @return A modified `pdf_document` based on the Reed Senior Thesis LaTeX
 #'   template
@@ -16,13 +17,13 @@
 #'  output: jayhawkdown::thesis_pdf
 #' }
 #' @export
-thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...){
+thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...) {
   template <- find_resource("kansas", "template.tex")
   base <- bookdown::pdf_book(template = template, toc = toc,
     toc_depth = toc_depth, highlight = "pygments", keep_tex = TRUE,
     pandoc_args = "--top-level-division=chapter", ...)
 
-  # Mostly copied from knitr::render_sweave
+  # nolint start
   base$knitr$opts_chunk$comment <- "#>"
   base$knitr$opts_chunk$fig.align <- "center"
   base$knitr$opts_chunk$out.width <- "80%"
@@ -34,6 +35,7 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...){
   base$knitr$opts_knit$cache <- FALSE
   base$knitr$opts_knit$fig.ext <- "png"
   base$knitr$opts_knit$fig.path <- "figure/"
+  # nolint end
 
   base
 }
@@ -46,6 +48,6 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...){
 #' @return a string
 #'
 #' @export
-inc <- function(input, sep = "\n\n  "){
+inc <- function(input, sep = "\n\n  ") {
   paste(readLines(input), collapse = sep)
 }

@@ -3,7 +3,7 @@
 \docType{package}
 \name{jayhawkdown}
 \alias{jayhawkdown}
-\title{jayhawkdown: A package for theses and dissertations for the University of Kansas using R Markdown}
+\title{jayhawkdown: Theses and dissertations for the University of Kansas}
 \description{
 This package creates theses/dissertations for the University of Kansas.
 }

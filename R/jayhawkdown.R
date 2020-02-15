@@ -1,4 +1,4 @@
-#' jayhawkdown: A package for theses and dissertations for the University of Kansas using R Markdown
+#' jayhawkdown: Theses and dissertations for the University of Kansas
 #'
 #' This package creates theses/dissertations for the University of Kansas.
 #'
