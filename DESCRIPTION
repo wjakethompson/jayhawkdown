@@ -27,7 +27,7 @@ Imports:
 Suggests:
     dplyr (>= 0.8.0),
     forcats (>= 0.4.0),
-    ggplot2 (>= 3.3.0),
+    ggplot2 (>= 3.2.1),
     kableExtra (>= 1.1.0),
     lintr (>= 2.0.0),
     purrr (>= 0.3.3),
