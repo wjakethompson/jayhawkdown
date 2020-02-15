@@ -35,5 +35,5 @@ Suggests:
     testthat (>= 1.0.2),
     tibble (>= 1.4.0),
     tidyr (>= 0.8.2)
-RoxygenNote: 6.1.0
+RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)
