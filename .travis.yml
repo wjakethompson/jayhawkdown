@@ -29,16 +29,17 @@ matrix:
       - Rscript -e 'covr::codecov()'
       - R CMD INSTALL $PKG_TARBALL
       - Rscript -e 'lintr::lint_package()'
+    script:
+      - R CMD INSTALL .
+      - cd inst/examples
+      - Rscript -e "bookdown::render_book('index.Rmd', 'jayhawkdown::thesis_pdf')"
+      - Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+      - cd ../..
+    deploy:
+      provider: pages
+      local_dir: _book
+      skip_cleanup: true
+      github-token: $GITHUB_PAT
+      on:
+        branch: master
   - r: oldrel
-
-before_script:
-  - R CMD INSTALL .
-  - cd inst/examples
-  - Rscript -e "bookdown::render_book('index.Rmd', 'jayhawkdown::thesis_pdf')"
-  - Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-  - cd ../..
-
-deploy:
-  provider: script
-  script: netlify deploy --prod --dir inst/examples/_book
-  skip_cleanup: true
