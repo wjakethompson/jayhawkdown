@@ -23,7 +23,7 @@ this was inspired by the
 [**thesisdown**](https://github.com/ismayc/thesisdown) package by
 Chester Ismay.
 
-The original Latex template and class document were written by Paul
+The original LaTeX template and class document were written by Paul
 Johnson, and modified for use with pandoc and R markdown.
 
 ## Installation
