@@ -17,8 +17,8 @@ role4: ""
 member5: "Committee Member #5"
 role5: "Outside member"
 # If one date is supplied, both must be supplied
-datedefended: "March 28, 2018"
-dateapproved: "March 28, 2018"
+datedefended: "`r format(Sys.Date(), '%B %d, %Y')`"
+dateapproved: "`r format(Sys.Date(), '%B %d, %Y')`"
 ### Rendering Options ----------------------------------------------------------
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
