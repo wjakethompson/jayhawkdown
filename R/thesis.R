@@ -34,7 +34,8 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...) {
   base$knitr$opts_knit$error <- FALSE
   base$knitr$opts_knit$cache <- FALSE
   base$knitr$opts_knit$fig.ext <- "png"
-  base$knitr$opts_knit$fig.path <- "figure/"
+  base$knitr$opts_knit$fig.path <- "figures/"
+  base$knitr$opts_knit$fig.retina <- 3
   # nolint end
 
   base
