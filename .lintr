@@ -1,0 +1,11 @@
+linters: with_defaults(
+    dummy_linter = NULL
+  )
+exclusions: list(
+    "man/figures/jayhawkdown-large.png",
+    "man/figures/jayhawkdown.png",
+    "man/inc.Rd",
+    "man/jayhawkdown.Rd",
+    "man/pipe.Rd",
+    "man/thesis_pdf.Rd"
+  )
