@@ -1,3 +1,7 @@
+branches:
+  only:
+  - master
+
 language: r
 pandoc_version: 2.2
 sudo: false
@@ -5,11 +9,27 @@ dist: trusty
 cache:
   packages: true
   directories:
+    - $HOME/.TinyTeX
     - $HOME/.npm
 
 before_install:
   - nvm install stable
   - npm install netlify-cli -g
+  - wget -qO- https://github.com/yihui/tinytex/raw/master/tools/download-travis-linux.sh | sh
+
+env:
+  global:
+    - R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+
+matrix:
+  include:
+  - r: devel
+  - r: release
+    after_success:
+      - Rscript -e 'covr::codecov()'
+      - R CMD INSTALL $PKG_TARBALL
+      - Rscript -e 'lintr::lint_package()'
+  - r: oldrel
 
 before_script:
   - R CMD INSTALL .

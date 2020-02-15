@@ -9,3 +9,4 @@
 hex-logo
 .netlify
 .lintr
+^codecov\.yml$
