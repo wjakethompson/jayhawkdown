@@ -6,4 +6,5 @@
 ^\.travis\.yml$
 ^appveyor\.yml$
 ^cran-comments\.md$
-hex_logo
+hex-logo
+.netlify
