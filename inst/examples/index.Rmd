@@ -58,8 +58,6 @@ load_packages <- function(x) {
 }
 sapply(needed_packages, load_packages)
 
-rm(list = ls()); gc()
-
 knitr::opts_chunk$set(
   echo = FALSE,
   warning = FALSE,
