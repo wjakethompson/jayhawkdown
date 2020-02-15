@@ -17,8 +17,8 @@ role4: ""
 member5: "Committee Member #5"
 role5: "Outside member"
 # If one date is supplied, both must be supplied
-# datedefended: "March 28, 2018"
-# dateapproved: "March 28, 2018"
+datedefended: "March 28, 2018"
+dateapproved: "March 28, 2018"
 ### Rendering Options ----------------------------------------------------------
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
