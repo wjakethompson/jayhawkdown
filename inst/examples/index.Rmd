@@ -67,7 +67,7 @@ knitr::opts_chunk$set(
   error = FALSE,
   cache = FALSE,
   fig.ext = "png",
-  fig.path = "figure/",
+  fig.path = "figures/",
   fig.align = "center",
   out.width = "80%",
   dpi = 2000,
