@@ -34,7 +34,7 @@ matrix:
       - cd ../..
     deploy:
       provider: pages
-      local_dir: _book
+      local_dir: inst/examples/_book
       skip_cleanup: true
       github-token: $GITHUB_PAT
       on:
