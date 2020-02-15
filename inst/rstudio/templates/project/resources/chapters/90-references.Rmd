@@ -1,4 +1,4 @@
-# References {#results}
+# References {#references}
 
 \setlength{\parindent}{-15pt}
 \setlength{\leftskip}{15pt}
