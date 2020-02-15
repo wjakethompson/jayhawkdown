@@ -4,7 +4,8 @@ jayhawkdown_skeleton <- function(path) {
 
   sub_dirs <- list.dirs(resources, recursive = TRUE,  full.names = FALSE)
   sub_dirs <- sub_dirs[-which(sub_dirs == "")]
-  files <- list.files(resources, recursive = TRUE, include.dirs = FALSE)
+  sub_dirs <- unique(c(sub_dirs, "data", "figures"))
+  files <- list.files(resources, recursive = TRUE, include.dirs = TRUE)
 
   # ensure directories exists
   new_path <- c(path, file.path(path, sub_dirs))
