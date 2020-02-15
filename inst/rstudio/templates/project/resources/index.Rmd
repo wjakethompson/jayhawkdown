@@ -59,12 +59,8 @@ knitr::opts_chunk$set(
   message = FALSE,
   error = FALSE,
   cache = FALSE,
-  fig.ext = "png",
-  fig.path = "figures/",
   fig.align = "center",
-  out.width = "80%",
-  fig.retina = 3,
-  dpi = 200,
+  out.width = "90%",
   dev = "cairo_pdf"
 )
 
