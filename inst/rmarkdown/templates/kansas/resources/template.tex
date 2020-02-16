@@ -21,8 +21,7 @@
 \doublespacing
 \usepackage[unicode=true,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
- breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=false,
- colorlinks=true]
+ breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
  {hyperref}
 \hypersetup{pdftitle={University of Kansas Thesis Template},
  pdfauthor={Anonymous},
@@ -82,6 +81,9 @@
 
 \title{$title$}
 \author{$author$}
+$if(credentials)$
+\priorcreds{$for(credentials)$$credentials$$sep$ \\ $endfor$}
+$endif$
 
 \dept{$department$}
 \degreetitle{$degree$}
