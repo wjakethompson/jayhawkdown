@@ -1,13 +1,16 @@
 jayhawkdown::thesis_pdf: default
 
 bookdown::gitbook:
+  dev: svglite
+  css: css/style.css
   config:
     toc:
       collapse: section
       before: |
         <li><strong><a href="./">jayhawkdown</a></strong></li>
       after: |
-        <li><a href="https://jayhawkdown.wjakethompson.com" target="_blank">Published with jayhawkdown and bookdown</a></li>
+        <li><a href="https://github.com/wjakethompson/jayhawkdown" target="_blank">Published with jayhawkdown and bookdown</a></li>
     download: [pdf]
-    sharing: no
-    css: css/style.css
+    sharing:
+      github: yes
+      facebook: no
