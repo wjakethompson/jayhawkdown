@@ -23,8 +23,6 @@ role5: "Outside member"
 datedefended: "`r format(Sys.Date(), '%B %d, %Y')`"
 dateapproved: "`r format(Sys.Date(), '%B %d, %Y')`"
 ### Rendering Options ----------------------------------------------------------
-knit: "bookdown::render_book"
-site: bookdown::bookdown_site
 output: jayhawkdown::thesis_pdf
 bibliography: ["bib/references.bib", "bib/packages.bib"]
 biblio-style: apalike2
@@ -42,7 +40,7 @@ description: >
   guidelines.
 url: https\://jayhawkdown.wjakethompson.com/
 github-repo: wjakethompson/jayhawkdown
-# cover-image: "figures/.png"
+cover-image: "figures/jayhawkdown-large.png"
 favicon: "figures/favicon.png"
 ### Pretext Sections -----------------------------------------------------------
 abstract: >
@@ -65,10 +63,26 @@ vapply(needed_packages, load_packages, logical(1))
 options(knitr.kable.NA = '')
 ```
 
-`r if (knitr::is_html_output()) "# Abstract {-}"`
+`r if (knitr::is_latex_output()) '<!--'` 
 
-`r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+# Welcome {-}
 
-`r if (knitr::is_html_output()) "# Acknowledgements {-}"`
+<a href="https://github.com/wjakethompson/jayhawkdown"><img src="figures/jayhawkdown-large.png" width="362" height="420" align="right" alt="jayhawkdown logo" /></a>
 
-`r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+This is the website for the **jayhawkdown** R package [@R-jayhawkdown]. The website is meant to provide documentation and example usage for creating a thesis or dissertation using the University of Kansas formatting. In addition to the website, this document is  also rendered as a PDF using the University of Kansas \LaTeX\ template. The PDF can be downloaded from
+
+## License {-}
+
+<a rel="license" href="https://opensource.org/licenses/GPL-3.0"><img alt="GPL-3 Licence" style="border-width:0" src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png" /></a>
+
+This work, as a whole, is licensed under a <a rel="license" href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a>.
+
+# Abstract {-}
+
+`r jayhawkdown::inc("pre/00-abstract.Rmd")`
+
+# Acknowledgements {-}
+
+`r jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+
+`r if (knitr::is_latex_output()) '-->'`
