@@ -81,10 +81,12 @@ The **jayhawkdown** package is licensed under a <a rel="license" href="https://o
 
 # Abstract {-}
 
-`r jayhawkdown::inc("pre/00-abstract.Rmd")`
+```{r abstract, child = "pre/00-abstract.Rmd"}
+```
 
 # Acknowledgements {-}
 
-`r jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+```{r acknowledgements, child = "pre/00-acknowledge.Rmd"}
+```
 
 `r if (knitr::is_latex_output()) '-->'`
