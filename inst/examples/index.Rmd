@@ -69,7 +69,7 @@ options(knitr.kable.NA = '')
 
 <a href="https://github.com/wjakethompson/jayhawkdown"><img src="figures/jayhawkdown-large.png" width="181" height="210" align="right" alt="jayhawkdown logo" /></a>
 
-This is the website for the **jayhawkdown** R package [@R-jayhawkdown]. The website is meant to provide documentation and example usage for creating a thesis or dissertation using the University of Kansas formatting. In addition to the website, this document is  also rendered as a PDF using the University of Kansas \LaTeX\ template. The PDF can be downloaded from
+This is the website for the **jayhawkdown** R package [@R-jayhawkdown]. The website is meant to provide documentation and example usage for creating a thesis or dissertation using the University of Kansas formatting. In addition to the website, this document is  also rendered as a PDF using the University of Kansas $\LaTeX$ template. The PDF can be downloaded from
 
 ## License {-}
 
