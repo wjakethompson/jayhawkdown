@@ -50,7 +50,7 @@ acknowledgements: >
 
 ```{r setup, include = FALSE}
 # Define which packages you will need ------------------------------------------
-needed_packages <- c("tidyverse")
+needed_packages <- c("knitr", "glue")
 
 # Load required packages
 load_packages <- function(x) {

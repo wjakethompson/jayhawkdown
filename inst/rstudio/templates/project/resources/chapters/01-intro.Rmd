@@ -19,4 +19,4 @@ render_cite <- glue("**{render_pkgs}** [@R-{render_pkgs}]")
 loaded_cite <- glue("**{loaded_pkgs}** [@R-{loaded_pkgs}]")
 ```
 
-This document was rendered using `r knitr::combine_words(render_cite)`. The following *R* packages were used to run analyses, generate figures, and create tables: `r knitr::combine_words(loaded_cite)`.
+This document was rendered using `r combine_words(render_cite)`. The following *R* packages were used to run analyses, generate figures, and create tables: `r combine_words(loaded_cite)`.
