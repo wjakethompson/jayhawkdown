@@ -69,13 +69,15 @@ options(knitr.kable.NA = '')
 
 <a href="https://github.com/wjakethompson/jayhawkdown"><img src="figures/jayhawkdown-large.png" width="181" height="210" align="right" alt="jayhawkdown logo" /></a>
 
-This is the website for the **jayhawkdown** R package [@R-jayhawkdown]. The website is meant to provide documentation and example usage for creating a thesis or dissertation using the University of Kansas formatting. In addition to the website, this document is  also rendered as a PDF using the University of Kansas $\LaTeX$ template. The PDF can be downloaded from
+This is the website for the **jayhawkdown** R package [@R-jayhawkdown]. The website is meant to provide documentation and example usage for creating a thesis or dissertation using the University of Kansas formatting. In addition to the website, this document is  also rendered as a PDF using the University of Kansas $\LaTeX$ template. The PDF can be downloaded from the top of this page to see what the rendered PDF document looks like with the correct formatting.
 
 ## License {-}
 
-<a rel="license" href="https://opensource.org/licenses/GPL-3.0"><img alt="GPL-3 Licence" style="border-width:0" src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png" /></a>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-This work, as a whole, is licensed under a <a rel="license" href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a>.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+The **jayhawkdown** package is licensed under a <a rel="license" href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a>.
 
 # Abstract {-}
 
