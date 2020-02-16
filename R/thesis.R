@@ -50,5 +50,13 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, ...) {
 #'
 #' @export
 inc <- function(input, sep = "\n\n  ") {
-  paste(readLines(input), collapse = sep)
+  readLines(input) %>%
+    strsplit(split = " ") %>%
+    lapply(FUN = function(x) {
+      starting <- gsub("$\\", "\\", x, fixed = TRUE)
+      ending <- gsub("\\$$", "\\\\", starting)
+      paste(ending, collapse = " ")
+    }) %>%
+    unlist() %>%
+    paste(collapse = sep)
 }
