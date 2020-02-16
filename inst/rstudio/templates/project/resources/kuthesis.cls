@@ -1,4 +1,4 @@
-% kuthesis v2.6.1
+% kuthesis v2.7
 %
 % By Paul E. Johnson <pauljohn@ku.edu>
 % Adapted from the Oxford university LaTeX cls By 
@@ -46,9 +46,15 @@
 % Correct typographical error in subsection environment.
 % Correct error in page one paragraph
 
+% Version 2.7 changes: 03/31/2018
+% Paul E. Johnson
+% Incorporate suggestions from Amber Roberts-Graham of
+% KU Office of the Graduate Dean. Use suggestions from
+% https://tex.stackexchange.com/questions/423956/convert-macro-from-preamble-into-a-cls-file
+
 %-------------------------- identification ---------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{kuthesis}[2016/03/27 v2 KU thesis class]
+\ProvidesClass{kuthesis}[2018/03/31 v2.7 KU thesis class]
 %-------------------------- initial code -----------------------
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
@@ -166,6 +172,33 @@
 \roleg{}
 }
 
+% priorcreds adaptation 20180328%
+\def\@priorcreda{\@latex@warning{No prior credential information given}}
+\def\@priorcreds@list{} % initialize
+\def\priorcreds#{\@priorcreds} % the trailing # requires \priorcreds to be followed by {
+\def\@priorcreds#1{\def\@priorcreda{{#1}}\@priorcreds@go}
+\def\@priorcreds@go{\@ifnextchar\bgroup{\@priorcreds@add}{}}
+\def\@priorcreds@add#1{%
+  \ifx\@priorcreds@list\@empty
+    \g@addto@macro\@priorcreds@list{{#1}}%
+  \else
+    \g@addto@macro\@priorcreds@list{,{#1}}%
+  \fi
+  \@priorcreds@go
+}
+
+
+\newcommand\@priorcredshow{%
+  %\end{center}
+  \par{\small
+  \@priorcreda % this always exists
+  \@for\next:=\@priorcreds@list\do{%
+    \par\vspace{0.24em}%
+    \next
+  \par}}%
+  % \end{center}
+}
+%% end prior creds
 
 
 \newcommand\@committeesignatures{
@@ -213,6 +246,10 @@
 \end{center}
 }
 }
+
+%%%%%%%
+
+%%%%%%%
 
 \newif\if@printd@tes
 \if@printd@tes
@@ -274,12 +311,15 @@
     \thispagestyle{empty}
   \null\vfill
   \begin{center}
-    { \Large {\bfseries {\@title}} \par}
-  \vskip 1.5em%
-    {By \par}%
-    \vskip 1.5em%
+   {\Large {\bfseries {\@title}} \par}
+   \vskip 1.5em%
+    {{\small \copyright \the\year} \par}
+    \vskip 0.5em%
     {{\Large \@author} \par}
-\vspace*{25mm}
+    \vskip 0.5em%
+   \@priorcredshow
+\vfill
+
     {{Submitted to the graduate degree program in {\@dept}  and the
         Graduate Faculty of the University of Kansas in partial
         fulfillment of the requirements for the degree of {\@degreetitle}.\par}}
@@ -299,7 +339,7 @@
   \setcounter{page}{2}
   \begin{center}
     The {\@papertype} Committee for {\@author} certifies \par
-    that this is the approved version of the following \MakeLowercase{\@papertype}: \par
+    that this is the approved version of the following \MakeLowercase{\@papertype} : \par
     \vfill
     {\@title} \par
     \vfill
@@ -342,7 +382,8 @@
   \global\let\@role5\relax
   \global\let\@role6\relax
   \global\let\@role7\relax
-  \global\let\@previousdegrees\relax
+  \global\let\@priorcreds\relax
+  \global\let\@priorcredshow\relax
 \end{singlespace}
 \end{alwayssingle}}
 
@@ -451,6 +492,20 @@
   \end{center}
   \vspace{0.5cm}}
 {\end{alwayssingle}}
+
+% See: https://tex.stackexchange.com/questions/309072/how-to-add-abstract-for-selected-chapters-in-my-thesis
+\newenvironment{chapterabstract}
+{
+    \begin{center}%
+    \vspace*{0.5cm}
+      {\large \bfseries Abstract \vspace{-.5em}\vspace{0pt}}
+    \end{center}
+    \list{}{%
+    \setlength{\leftmargin}{5mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax
+}
 
 % %The abstractseparate environment is for running of a page with the abstract
 % %on including title and author etc as required to be handed in separately
