@@ -39,9 +39,18 @@ acknowledgements: >
   `r if (knitr::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
 ---
 
+```{r instructions, include = FALSE}
+# Welcome to the jayhawkdown thesis and dissertation template! To ensure you
+# have all of the necessary software installed, please check the README here:
+# https://github.com/wjakethompson/jayhawkdown
+# Once your system has been set up correctly, you should be able to knit the
+# example file by pressing the 'Knit' button in RStudio, or using:
+# bookdown::render_book("index.Rmd", "jayhawkdown::thesis_pdf")
+```
+
 ```{r setup, include = FALSE}
 # Define which packages you will need ------------------------------------------
-needed_packages <- c("glue")
+needed_packages <- c("tidyverse")
 
 # Load required packages
 load_packages <- function(x) {
@@ -53,28 +62,15 @@ load_packages <- function(x) {
 vapply(needed_packages, load_packages, logical(1))
 
 # Set some knitr options -------------------------------------------------------
-knitr::opts_chunk$set(
-  echo = FALSE,
-  warning = FALSE,
-  message = FALSE,
-  error = FALSE,
-  cache = FALSE,
-  fig.align = "center",
-  out.width = "90%",
-  dev = "cairo_pdf"
-)
+knitr::opts_chunk$set(out.width = "90%")
 
 options(knitr.kable.NA = "")
 ```
 
-`r if (knitr::is_latex_output()) '<!--'`
-
-# Abstract {-}
+`r if (knitr::is_html_output()) "# Abstract {-}"`
 
 `r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
 
-# Acknowledgements {-}
+`r if (knitr::is_html_output()) "# Acknowledgements {-}"`
 
 `r if (knitr::is_html_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
-
-`r if (knitr::is_latex_output()) '-->'`
