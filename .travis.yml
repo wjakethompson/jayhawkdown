@@ -26,7 +26,7 @@ matrix:
       - Rscript -e 'covr::codecov()'
       - R CMD INSTALL $PKG_TARBALL
       - Rscript -e 'lintr::lint_package()'
-    script:
+    before_deploy:
       - R CMD INSTALL .
       - cd inst/examples
       - Rscript -e "bookdown::render_book('index.Rmd', 'jayhawkdown::thesis_pdf')"
