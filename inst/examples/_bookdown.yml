@@ -10,3 +10,14 @@ language:
 download: [
   ["jayhawkdown.pdf", "PDF"]
 ]
+
+rmd_files: [
+  "index.Rmd",
+
+  "chapters/01-jayhawkdown.Rmd",
+  "chapters/02-markdown-formatting.Rmd",
+
+  "chapters/90-references.Rmd",
+
+  "chapters/91-appendix1.Rmd"
+]
