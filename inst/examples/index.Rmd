@@ -44,9 +44,9 @@ cover-image: "figures/jayhawkdown-large.png"
 favicon: "figures/favicon.png"
 ### Pretext Sections -----------------------------------------------------------
 abstract: >
-  `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
+  `r if (knitr::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
 acknowledgements: >
-  `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
+  `r if (knitr::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
 ---
 
 ```{r setup, include = FALSE}
