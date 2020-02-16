@@ -55,6 +55,7 @@ inc <- function(input, sep = "\n\n  ") {
     lapply(FUN = function(x) {
       starting <- gsub("$\\", "\\", x, fixed = TRUE)
       ending <- gsub("\\$$", "\\\\", starting)
+      ending <- gsub("\\$\\.$", "\\\\\\.", ending)
       paste(ending, collapse = " ")
     }) %>%
     unlist() %>%
