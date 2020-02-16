@@ -20,19 +20,16 @@ role4: ""
 member5: "Member 5"
 role5: "Outside member"
 # If one date is suppled, both must be supplied
-datedefended: "September 4, 2016"
-dateapproved: "October 8, 2016"
-### Other options --------------------------------------------------------------
-bibliography: ["bib/packages.bib", "bib/references.bib"]
-nocite: |
-  @R-bookdown, @R-jayhawkdown, @R-knitr, @R-rmarkdown
-link-citations: yes
+# datedefended: "September 4, 2016"
+# dateapproved: "October 8, 2016"
 ### Rendering Options (probably don't edit) ------------------------------------
-knit: bookdown::render_book
-site: bookdown::bookdown_site
 output: jayhawkdown::thesis_pdf
+bibliography: ["bib/references.bib", "bib/packages.bib"]
 biblio-style: apalike2
 csl: csl/apa.csl
+nocite: |
+  @R-knitr, @R-rmarkdown, @R-bookdown, @R-jayhawkdown
+link-citations: yes
 lot: true
 lof: true
 ### Pretext Sections -----------------------------------------------------------
