@@ -4,6 +4,7 @@ library(magick)
 library(png)
 library(sp)
 library(grid)
+library(here)
 
 
 l <- 1
@@ -48,3 +49,12 @@ logo_large <- ggplot() +
 png("man/figures/jayhawkdown-large.png", width = 905, height = 1050, bg = "transparent")
 print(logo_large)
 dev.off()
+
+
+img <- image_read(here("man", "figures", "jayhawkdown-large.png")) %>%
+  image_trim()
+
+image_blank(32, 32, "hotpink") %>%
+  image_composite(image_scale(img, "x32"), offset = "+2+0") %>%
+  image_transparent("hotpink", fuzz = 15) %>%
+  image_write(here("inst", "examples", "figures", "favicon.png"))
