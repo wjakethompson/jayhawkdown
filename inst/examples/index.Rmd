@@ -1,10 +1,10 @@
 ---
 ### Required Information -------------------------------------------------------
-title: "Thesis Title"
-author: "Your Name"
-department: "Your Department"
-degree: "Your Degree"
-papertype: "Dissertation or Thesis"
+title: "Writing Theses and Dissertations with jayhawkdown"
+author: "W. Jake Thompson"
+department: "Educational Psychology"
+degree: "Doctor of Philosophy"
+papertype: "Dissertation"
 # Committe:
 member1: "Committee Member #1"
 role1: "Chairperson"
@@ -31,21 +31,22 @@ nocite: |
 link-citations: yes
 lot: true
 lof: true
+### Website options ------------------------------------------------------------
+description: >
+  An example of how to use the jayhawkdown package to write dissertations and
+  theses at the University of Kansas. This package allows users to write in
+  R Markdown and have the output generate into a PDF that meets university
+  guidelines.
+url: https\://jayhawkdown.wjakethompson.com/
+github-repo: wjakethompson/jayhawkdown
+# cover-image: "figures/.png"
+favicon: "figures/favicon.png"
 ### Pretext Sections -----------------------------------------------------------
 abstract: >
   `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-abstract.Rmd")`
 acknowledgements: >
   `r if (knitr:::is_latex_output()) jayhawkdown::inc("pre/00-acknowledge.Rmd")`
 ---
-
-```{r instructions, include = FALSE}
-# Welcome to the jayhawkdown thesis and dissertation template! To ensure you
-# have all of the necessary software installed, please check the README here:
-# https://github.com/wjakethompson/jayhawkdown
-# Once your system has been set up correctly, you should be able to knit the
-# example file by pressing the 'Knit' button in RStudio, or using:
-# bookdown::render_book("index.Rmd", "jayhawkdown::thesis_pdf")
-```
 
 ```{r setup, include = FALSE}
 needed_packages <- c("dplyr", "forcats", "ggplot2", "purrr", "readr", "stringr",
@@ -56,18 +57,7 @@ load_packages <- function(x) {
   }
   suppressPackageStartupMessages(require(x, character.only = TRUE))
 }
-sapply(needed_packages, load_packages)
-
-knitr::opts_chunk$set(
-  echo = FALSE,
-  warning = FALSE,
-  message = FALSE,
-  error = FALSE,
-  cache = FALSE,
-  fig.align = "center",
-  out.width = "90%",
-  dev = "cairo_pdf"
-)
+vapply(needed_packages, load_packages, logical(1))
 
 options(knitr.kable.NA = '')
 ```
