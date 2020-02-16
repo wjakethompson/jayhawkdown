@@ -2,6 +2,9 @@
 ### Required Information -------------------------------------------------------
 title: "Writing Theses and Dissertations with jayhawkdown"
 author: "W. Jake Thompson"
+credentials:
+  - "B.S. Behavioral Neuroscience, University of Kansas"
+  - "Ph.D. Educational Psychology, University of Kansas"
 department: "Educational Psychology"
 degree: "Doctor of Philosophy"
 papertype: "Dissertation"
